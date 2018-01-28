@@ -26,7 +26,7 @@ function userInfo() {
 # https://a.blazemeter.com/api/v4/tests/testID/start
 function startTest {
   id=${1}
-  local __return=`curl -s -X POST ${BM_API_URL}/${id}/start  -H "Content-Type: application/json" --user ${APIKEY}`
+  local __return=`curl -s -X POST ${BM_API_URL}/tests/${id}/start  -H "Content-Type: application/json" --user ${APIKEY}`
   echo $__return
 }
 
