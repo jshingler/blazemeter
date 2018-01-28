@@ -23,7 +23,8 @@ function userInfo() {
 # ============================================
 # https://a.blazemeter.com/api/v4/tests/testID/start
 function startTest {
-  local __return=`curl -s -X POST ${BM_API_URL}/${1}/start  -H "Content-Type: application/json" --user ${APIKEY}`
+  id=${1}
+  local __return=`curl -s -X POST ${BM_API_URL}/${id}/start  -H "Content-Type: application/json" --user ${APIKEY}`
   echo $__return
 }
 
@@ -32,7 +33,7 @@ function startTest {
 # GET request to 'https://a.blazemeter.com/api/v4/masters/{masterId}/status?events=false'
 function testStatus {
   id=${1}
-  local __return=`curl -s -X get ${BM_API_URL}/masters/${1}/status?events=false --user ${APIKEY}`
+  local __return=`curl -s -X get ${BM_API_URL}/masters/${id}/status?events=false --user ${APIKEY}`
   echo $__return
 }
 
@@ -40,7 +41,7 @@ function testStatus {
 # /api/v4/masters/%s/reports/thresholds?format=junit
 function getJUnitReport {
   id=${1}
-  local __return=`curl -s -X get ${BM_API_URL}/masters/${1}/reports/thresholds?format=junit --user ${APIKEY}`
+  local __return=`curl -s -X get ${BM_API_URL}/masters/${id}/reports/thresholds?format=junit --user ${APIKEY}`
   echo $__return
 }
 
@@ -68,4 +69,3 @@ function waitForTest {
       fi
   done
 }
-
