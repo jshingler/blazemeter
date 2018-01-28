@@ -5,6 +5,8 @@
 #
 # https://guide.blazemeter.com/hc/en-us/articles/206732689-BlazeMeter-REST-APIs-BlazeMeter-REST-APIs
 #
+# USE: https://github.com/Blazemeter/blazemeter-api-client to guide thoughts
+#
 # ============================================
 
 BM_API_URL=https://a.blazemeter.com:443/api/latest
